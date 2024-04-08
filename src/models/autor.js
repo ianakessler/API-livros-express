@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const autorSchema = new mongoose.Schema({
     id: {type: mongoose.Schema.Types.ObjectId},
-    nome: {type: String},
-    nacionalidade: {type: String}
+    nome: {type: String, required: [true, "Campo 'Nome' é obrigatório"]},
+    nacionalidade: {type: String, required: [true, "O campo 'nacionalidade' é obrigatório"]}
 }, {versionKey: false});
 
 const autores = mongoose.model("autores", autorSchema);
